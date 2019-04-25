@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.5">
+  <title>Vendors</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="../css/style2.css">
+  <script src="../js/jquery.js"></script>
+  <script src="../js/vendor.js"></script>
+  <script>
+    $(function () {
+      $("#header").load("adminheader.html");
+    });
+  </script>
+</head>
+
+<body>
+  <div class="container-fluid">
+    <div id="header"></div>
+    <div class="weluser" id="welc"></div>
+    <h1>Vendors List</h1>
+    <form id="vendorForm">
+      <input id="name" placeholder="Vendor Name">
+      <br><br>
+      <button id="addvendor"> Add Vendor </button>
+    </form>
+    <br> <br>
+    <table  class="table table-hover" id="vendors">
+    </table>
+  </div>
+</body>
+
+</html>

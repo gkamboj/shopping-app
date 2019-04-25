@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css?family=Numans');
+
+html,body{
+/* background-image: url('../images/login_bg.jpg'); */
+background-size: cover;
+background-repeat: no-repeat;
+height: 100%;
+font-family: 'Numans', sans-serif;
+font-size: 100%;
+}
+
+.container-fluid{
+height: 100%;
+align-content: center;
+font-size: 100%;
+}
+
+.weluser{
+    float: right;
+    padding-top: 10px;
+    padding-bottom: 30px;
+    font-style: italic;
+    font-family: "Lucida console", monospace;
+    font-weight: bold;
+}
