@@ -1,7 +1,5 @@
 $(() => {
-    //updateHead();
     if (sessionStorage.getItem('name') != undefined){
-        //wel.innerText = 'Welcome ' + sessionStorage.getItem('name');
         $('#logout').prop('hidden',false)
     }
     $('#logout').click(()=>{
