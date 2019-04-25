@@ -14,6 +14,8 @@ $(() => {
                     var cartValue = 0;
                     var count = 1;
                     var table = document.createElement('table');
+                    table.setAttribute("class", "table table-hover");
+                    var tb = document.createElement("tbody");
                     var headerRow = document.createElement('tr');
                     addDataToRow(document.createTextNode('S. No.'), headerRow, 'center', 'bold')
                     addDataToRow(document.createTextNode('Product Name'), headerRow, 'center', 'bold');
@@ -22,6 +24,7 @@ $(() => {
                     addDataToRow(document.createTextNode('Price'), headerRow, 'center', 'bold');
                     addDataToRow(document.createTextNode('Action'), headerRow, 'center', 'bold');
                     table.appendChild(headerRow);
+                    table.appendChild(tb)
 
                     for (let item of cart.data) {
                         var row = document.createElement('tr');
@@ -58,21 +61,21 @@ $(() => {
                         cartCountSpan.innerText = item.quantity;
                         productPriceSpan.innerText = item.totalPrice;
                         cartValue += item.totalPrice;
-                        
+
                         addDataToRow(countSpan, row, 'right');
                         addDataToRow(productNameSpan, row);
                         addDataToRow(vendorNameSpan, row);
                         addDataToRow(cartCountSpan, row, 'center');
                         addDataToRow(productPriceSpan, row);
                         addDataToRow(delButton, row, 'center', false);
-                        table.appendChild(row);
+                        tb.appendChild(row);
                         table.setAttribute("border", "2");
 
                         cartTable[0].appendChild(table);
                         count += 1;
                     }
 
-                    document.getElementById('cartValue').innerText = ' Total cart value is INR '+cartValue;
+                    document.getElementById('cartValue').innerText = ' Total cart value is INR ' + cartValue;
                 } else {
                     cartTable[0].append(cart.message)
                     document.getElementById('cartValue').innerText = ' Total cart value is INR 0';

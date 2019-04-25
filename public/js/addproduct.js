@@ -42,6 +42,8 @@ function refreshList() {
         if (products.success) {
             var count = 1;
             var table = document.createElement('table');
+            table.setAttribute("class","table table-hover");
+            var tb = document.createElement("tbody");
             var headerRow = document.createElement('tr');
             addDataToRow(document.createTextNode('S. No.'), headerRow, 'center', 'bold')
             addDataToRow(document.createTextNode('Product Name'), headerRow, 'center', 'bold');
@@ -49,6 +51,8 @@ function refreshList() {
             addDataToRow(document.createTextNode('Price'), headerRow, 'center', 'bold');
             addDataToRow(document.createTextNode('Action'), headerRow, 'center', 'bold');
             table.appendChild(headerRow);
+            table.appendChild(tb)
+
             for (let product of products.data) {
                 var row = document.createElement('tr');
                 var countSpan = document.createElement('span');
@@ -87,7 +91,7 @@ function refreshList() {
                 addDataToRow(vendorNameSpan, row);
                 addDataToRow(productPriceSpan, row);
                 addDataToRow(delButton, row, 'center', false);
-                table.appendChild(row);
+                tb.appendChild(row);
                 table.setAttribute("border", "2");
                 
                 productTable[0].appendChild(table);

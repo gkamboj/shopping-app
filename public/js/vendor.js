@@ -35,11 +35,15 @@ function refreshList() {
         if (vendors.success) {
             var count = 1;
             var table = document.createElement('table');
+            table.setAttribute("class","table table-hover");
+            var tb = document.createElement("tbody");
             var headerRow = document.createElement('tr');
             addDataToRow(document.createTextNode('S. No.'), headerRow, 'center', 'bold')
             addDataToRow(document.createTextNode('Vendor Name'), headerRow, 'center', 'bold');
             addDataToRow(document.createTextNode('Action'), headerRow, 'center', 'bold');
             table.appendChild(headerRow);
+            table.appendChild(tb)
+
             for (let vendor of vendors.data) {
                 var row = document.createElement('tr');
                 var countSpan = document.createElement('span');
@@ -72,7 +76,7 @@ function refreshList() {
                 addDataToRow(countSpan, row, 'right');
                 addDataToRow(vendorSpan, row);
                 addDataToRow(delButton, row, 'center');
-                table.appendChild(row);
+                tb.appendChild(row);
                 table.setAttribute("border", "2");
                 
                 vendorTable[0].appendChild(table);

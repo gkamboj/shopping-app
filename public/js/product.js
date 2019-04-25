@@ -26,6 +26,7 @@ function refreshList() {
             addDataToRow(document.createTextNode('Action'), headerRow, 'center', 'bold');
             table.appendChild(headerRow);
             table.appendChild(tb)
+            
             for (let product of products.data) {
                 var row = document.createElement('tr');
                 var countSpan = document.createElement('span');
@@ -44,10 +45,10 @@ function refreshList() {
                 addButton.appendChild(addIcon);
 
                 addButton.onclick = (() => {
-                    console.log($("#quantity"+product.id).val());
+                    console.log(product.price + ' ' + cartCountSpan.value)
                     $.post('/cart', {
                         quantity: $("#quantity"+product.id).val(),
-                        totalPrice: product.price*cartCountSpan.value/100,
+                        totalPrice: product.price*$("#quantity"+product.id).val()/100,
                         userId: sessionStorage.getItem('id'),
                         productId: product.id,
                         productName: product.productName
