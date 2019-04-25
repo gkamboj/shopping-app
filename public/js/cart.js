@@ -77,7 +77,7 @@ $(() => {
 
                     document.getElementById('cartValue').innerText = ' Total cart value is INR ' + cartValue;
                 } else {
-                    cartTable[0].append(cart.message)
+                    document.getElementById('cartitems').innerHTML = `<h1 style='text-align: center; font-weight:bold;'>${cart.message}</h1>`;
                     document.getElementById('cartValue').innerText = ' Total cart value is INR 0';
                 }
             })

@@ -69,7 +69,7 @@ function refreshList() {
 
                 countSpan.innerText = count;
                 productNameSpan.innerText = product.productName;
-                productPriceSpan.innerText = product.price;
+                productPriceSpan.innerText = product.price/100;
                 vendorNameSpan.innerText = product.vendor.vendorName;
                 
                 delButton.onclick = ((event) => {

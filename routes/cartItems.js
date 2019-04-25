@@ -32,7 +32,20 @@ cartRoute.post('/', async (req, res) => {
         }
     })
     if (req.body.quantity == '' || req.body.quantity <= 0) {
-        res.send({ success: false, message: 'Quantity must be greter than or equalt to 1 to add product to cart' })
+        res.send({
+            success: false,
+            message: 'Quantity must be greter than or equalt to 1 to add product to cart'
+        })
+    } else if (req.body.quantity > 5) {
+        res.send({
+            success: false,
+            message: "Quantity can't be greater than 5"
+        })
+    } else if (!(Number.isInteger(req.body.quantity))) {
+        res.send({
+            success: false,
+            message: "Quantity value must be natural number only"
+        })
     }
     else if (prev == null) {
         try {
