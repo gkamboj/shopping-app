@@ -2,11 +2,11 @@
   "name": "shopping-app",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "/public/js/index.js",
   "scripts": {
     "start": "node server.js"
   },
-  "author": "",
+  "author": "Gaurav Kamboj",
   "license": "ISC",
   "dependencies": {
     "express": "^4.16.4",

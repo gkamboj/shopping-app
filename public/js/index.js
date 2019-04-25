@@ -17,9 +17,9 @@ $(() => {
                     sessionStorage.setItem('id', data.user.id)
                     alert(data.message)
                     if (data.user.email.includes('admin')) {
-                        window.location.replace('../html/vendors.html')
+                        window.location.replace('/vendors.html')
                     } else {
-                        window.location.replace('../html/products.html')
+                        window.location.replace('/products.html')
                     }
                 } else {
                     console.log(data.message)

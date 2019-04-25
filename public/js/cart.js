@@ -10,7 +10,7 @@ $(() => {
         cartTable.empty();
         if (cartTable[0] != undefined) {
             $.get('/cart/' + sessionStorage.getItem('id'), (cart) => {
-                if (cart.success) {
+                if (cart.success && cart.data.length > 0) {
                     var cartValue = 0;
                     var count = 1;
                     var table = document.createElement('table');
@@ -58,7 +58,7 @@ $(() => {
                         cartCountSpan.innerText = item.quantity;
                         productPriceSpan.innerText = item.totalPrice;
                         cartValue += item.totalPrice;
-
+                        
                         addDataToRow(countSpan, row, 'right');
                         addDataToRow(productNameSpan, row);
                         addDataToRow(vendorNameSpan, row);
@@ -71,9 +71,11 @@ $(() => {
                         cartTable[0].appendChild(table);
                         count += 1;
                     }
+
                     document.getElementById('cartValue').innerText = ' Total cart value is INR '+cartValue;
                 } else {
                     cartTable[0].append(cart.message)
+                    document.getElementById('cartValue').innerText = ' Total cart value is INR 0';
                 }
             })
         }

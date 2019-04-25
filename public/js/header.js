@@ -7,7 +7,7 @@ $(() => {
     $('#logout').click(()=>{
         sessionStorage.removeItem('name');
         sessionStorage.removeItem('email');
-        location.href = '../html/index.html';
+        location.href = './index.html';
     })
 })
 
