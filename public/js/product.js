@@ -45,6 +45,7 @@ function refreshList() {
                 addButton.appendChild(addIcon);
 
                 addButton.onclick = (() => {
+                    console.log('Quantity:'+$("#quantity"+product.id).val())
                     $.post('/cart', {
                         quantity: $("#quantity"+product.id).val(),
                         totalPrice: product.price*$("#quantity"+product.id).val()/100,

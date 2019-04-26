@@ -41,7 +41,7 @@ cartRoute.post('/', async (req, res) => {
             success: false,
             message: "Quantity can't be greater than 5"
         })
-    } else if (!(Number.isInteger(req.body.quantity))) {
+    } else if (!(Number.isInteger(parseFloat(req.body.quantity)))) {
         res.send({
             success: false,
             message: "Quantity value must be natural number only"
