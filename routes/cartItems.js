@@ -58,7 +58,7 @@ cartRoute.post('/', async (req, res) => {
             })
             res.send({ success: true, data: result })
         } catch (err) {
-            res.send({ success: false, message: "If you are new user, please logout and login again using your credentials to use this application."})
+            res.send({ success: false, message: "If you are new user, please logout and login again using your credentials to use this application." })
         }
     } else {
         const newResult = CartItems.update(

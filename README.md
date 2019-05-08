@@ -1,5 +1,9 @@
 "# shopping-app" 
 
+Commands:
+npm init
+npm install
+
 Login/Signup instructions are given on homepage
 
 To login as admin: login/signup using email containing word 'admin'
